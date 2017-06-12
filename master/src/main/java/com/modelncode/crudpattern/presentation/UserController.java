@@ -55,8 +55,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.PUT)
-    public User 수정(@RequestBody User user) {
-        return userService.수정(user);
+    public void 수정(@RequestBody User user) {
+        userService.수정(user);
     }
 
     @RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
