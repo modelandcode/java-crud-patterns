@@ -77,7 +77,7 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public int 수정(User user) {
-        StringBuilder sbSql =  new StringBuilder("UPDATE FROM MC_USER ");
+        StringBuilder sbSql =  new StringBuilder("UPDATE MC_USER ");
         sbSql.append("SET name=?, alias=?, email=? ");
         sbSql.append("where id=?");
         try {

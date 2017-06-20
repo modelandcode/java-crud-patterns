@@ -16,6 +16,7 @@ import java.util.List;
  * Created by g on 2017-06-12.
  */
 @RestController
+@RequestMapping("/api")
 public class UserController {
     public static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
