@@ -3,8 +3,8 @@
 */
 
 define([
-	"libs/webix-mvc-core/core",
-	"libs/webix-mvc-core/plugins/menu"
+	"libs/webix-jet/core",
+	"libs/webix-jet/plugins/menu"
 ], function(
 	core, menu
 ){
