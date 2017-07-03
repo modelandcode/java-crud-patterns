@@ -11,11 +11,16 @@ define([
 		width:180, layout:"y", select:true,
 		template:"<span class='webix_icon fa-#icon#'></span> #value# ",
 		data:[
-			{ value:"Home", 				id:"start",			href:"#!/top/start", 			icon:"envelope-o" },
-			{ value:"Master-Only(User)", 	id:"masterUser",	href:"#!/top/masterUser/userForm", 	icon:"briefcase" },
-			{ value:"Master-Only(Group)", 	id:"masterGroup",	href:"#!/top/masterGroup/groupForm", 	icon:"briefcase" },
-			{ value:"Master(GroupUser)", id:"masterGroupUser",	href:"#!/top/masterGroupUser/groupUserForm", 	icon:"briefcase" }
-			
+			{ value:"Home", 				id:"start",			
+				href:"#!/top/start", 		icon:"envelope-o" },
+			{ value:"Master-Only(User)", 	id:"masterUser",	
+				href:"#!/top/masterUser/userForm", 	icon:"briefcase" },
+			{ value:"Master-Only(Group)", 	id:"masterGroup",	
+				href:"#!/top/masterGroup/groupForm", 	icon:"briefcase" },
+			{ value:"Master(GroupUser)", 	id:"masterGroupUser",	
+				href:"#!/top/masterGroupUser/groupUserForm", 	icon:"briefcase" },
+			{ value:"Master-Detail(User)", 	id:"masterDetailUser",	
+				href:"#!/top/masterDetailUser/detailUserForm", 	icon:"briefcase" }			
 		]
 	};
 
