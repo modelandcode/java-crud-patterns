@@ -4,10 +4,10 @@ define([
 function(users){
      var fnObj = {
         newForm: function() {
-            $$("form:editor").setValues( {id:0, name:'', alias:'', email:''});
+            $$("formUser").setValues( {id:0, name:'', alias:'', email:''});
         },
         save: function() {
-            var user = $$("form:editor").getValues();
+            var user = $$("formUser").getValues();
             var id = user.id;
             if (id && id > 0) {
                 //console.log('update');
@@ -43,7 +43,7 @@ function(users){
         },
         delete: function() {
             console.log("delete!!");
-            var id = $$("form:editor").getValues().id;
+            var id = $$("formUser").getValues().id;
             if (id) {
                 users.data.remove(id);
                 webix.ajax().del(users.url + '/' + id, {}, {
@@ -62,13 +62,13 @@ function(users){
 
 	var ui = { 
         rows: [
-            { view:"toolbar", id:"agToolbar",
+            { view:"toolbar", id:"tbCrud",
               cols:[
                 { view:"button", value:"새로작성", type:"base", width:80, align:"left", click:fnObj.newForm },
                 { view:"button", value:"저장", type:"form", width:80, align:"right", click: fnObj.save },
                 { view:"button", value:"삭제", type:"danger", width:80, align:"right", click: fnObj.delete }
             ]},
-            {view:"form", id:"form:editor", width:400, elements:[
+            {view:"form", id:"formUser", width:400, elements:[
                 {view:"text", name:"id", label:"id", disabled:true},
                 {view:"text", name:"name", label:"이름"},
                 {view:"text", name:"alias", label:"아이디"},
@@ -82,7 +82,7 @@ function(users){
 	return {
 		$ui:ui,
 		$oninit:function(){
-			$$("form:editor").bind(users.data);
+			$$("formUser").bind(users.data);
 		}
 	};
 

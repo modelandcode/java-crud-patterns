@@ -4,10 +4,10 @@ define([
 function(groups){
      var fnObj = {
         newForm: function() {
-            $$("form:editor").setValues( {id:0, name:''});
+            $$("formGroup").setValues( {id:0, name:''});
         },
         save: function() {
-            var group = $$("form:editor").getValues();
+            var group = $$("formGroup").getValues();
             var id = group.id;
             if (id && id > 0) {
                 webix.ajax().headers({
@@ -41,7 +41,7 @@ function(groups){
         },
         delete: function() {
             //console.log("delete!!");
-            var id = $$("form:editor").getValues().id;
+            var id = $$("formGroup").getValues().id;
             if (id) {
                 groups.data.remove(id);
                 webix.ajax().del(groups.url + '/' + id, {}, {
@@ -60,13 +60,13 @@ function(groups){
 
 	var ui = { 
         rows: [
-            { view:"toolbar", id:"agToolbar",
+            { view:"toolbar", id:"tbCrud",
               cols:[
                 { view:"button", value:"새로작성", type:"base", width:80, align:"left", click:fnObj.newForm },
                 { view:"button", value:"저장", type:"form", width:80, align:"right", click: fnObj.save },
                 { view:"button", value:"삭제", type:"danger", width:80, align:"right", click: fnObj.delete }
             ]},
-            {view:"form", id:"form:editor", width:400, elements:[
+            {view:"form", id:"formGroup", width:400, elements:[
                 {view:"text", name:"id", label:"id", disabled:true},
                 {view:"text", name:"name", label:"이름"}
             ]},
@@ -78,7 +78,7 @@ function(groups){
 	return {
 		$ui:ui,
 		$oninit:function(){
-			$$("form:editor").bind(groups.data);
+			$$("formGroup").bind(groups.data);
 		}
 	};
 

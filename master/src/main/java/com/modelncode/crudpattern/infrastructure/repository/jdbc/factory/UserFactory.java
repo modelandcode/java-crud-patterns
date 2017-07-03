@@ -1,4 +1,4 @@
-package com.modelncode.crudpattern.infrastructure.repository.jdbc;
+package com.modelncode.crudpattern.infrastructure.repository.jdbc.factory;
 
 import com.modelncode.crudpattern.domain.User;
 

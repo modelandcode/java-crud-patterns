@@ -14,7 +14,7 @@ define([
 			{ value:"Home", 				id:"start",			href:"#!/top/start", 			icon:"envelope-o" },
 			{ value:"Master-Only(User)", 	id:"masterUser",	href:"#!/top/masterUser/userForm", 	icon:"briefcase" },
 			{ value:"Master-Only(Group)", 	id:"masterGroup",	href:"#!/top/masterGroup/groupForm", 	icon:"briefcase" },
-			{ value:"매출 관리", 		id:"sales",		href:"#!/top/data", 			icon:"briefcase" }
+			{ value:"Master(GroupUser)", id:"masterGroupUser",	href:"#!/top/masterGroupUser/groupUserForm", 	icon:"briefcase" }
 			
 		]
 	};

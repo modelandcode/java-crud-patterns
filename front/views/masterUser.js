@@ -4,7 +4,7 @@ define([
     //console.log(users.data);
 	var ui = { 
         cols: [ 
-            { view:"datatable", id:"data:table", select:true, 
+            { view:"datatable", id:"dtUser", select:true, 
                 columns:[
                     {id:"id", header:"#", width:40, sort:"int"},
                     {id:"name", header:"이름", width: 150, sort:"string"},
@@ -36,9 +36,8 @@ define([
 	return {
 		$ui: ui,
 		$oninit:function(view){
-			//$$("data:table").sync(users.data);
             users.refresh();
-            $$("data:table").parse(users.data);
+            $$("dtUser").parse(users.data);
 		},
 	};
 	
