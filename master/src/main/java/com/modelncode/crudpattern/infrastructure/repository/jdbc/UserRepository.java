@@ -3,6 +3,7 @@ package com.modelncode.crudpattern.infrastructure.repository.jdbc;
 import com.modelncode.crudpattern.domain.User;
 import com.modelncode.crudpattern.domain.exception.RepositoryException;
 import com.modelncode.crudpattern.domain.repository.IUserRepository;
+import com.modelncode.crudpattern.infrastructure.repository.jdbc.factory.UserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
