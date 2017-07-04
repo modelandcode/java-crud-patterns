@@ -20,7 +20,9 @@ define([
 			{ value:"Master(GroupUser)", 	id:"masterGroupUser",	
 				href:"#!/top/masterGroupUser/groupUserForm", 	icon:"briefcase" },
 			{ value:"Master-Detail(User)", 	id:"masterDetailUser",	
-				href:"#!/top/masterDetailUser/detailUserForm", 	icon:"briefcase" }			
+				href:"#!/top/masterDetailUser/detailUserForm", 	icon:"briefcase" },
+			{ value:"Master-Master(User)", 	id:"masterMasterUser",	
+				href:"#!/top/masterMasterUser/masterUserForm", 	icon:"briefcase" }			
 		]
 	};
 
