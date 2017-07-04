@@ -42,7 +42,8 @@ ALTER TABLE MC_GROUP
 -- GROUP_USER
 CREATE TABLE MC_GROUP_USER (
 	group_id INTEGER NOT NULL, -- group_id
-	user_id  INTEGER NOT NULL  -- user_id
+	user_id  INTEGER NOT NULL,  -- user_id
+	position varchar(50) NULL
 );
 
 -- GROUP_USER
@@ -75,9 +76,8 @@ ALTER TABLE MC_AUDIT
 ALTER TABLE MC_AUDIT
 	MODIFY COLUMN id INTEGER NOT NULL AUTO_INCREMENT;
 
--- CONTACT
 CREATE TABLE MC_CONTACT (
-	id           INTEGER     NOT NULL, -- id
+	user_id      INTEGER     NOT NULL, -- id
 	contact_type VARCHAR(10) NOT NULL, -- contact_type
 	email        VARCHAR(50) NOT NULL, -- email
 	phone        VARCHAR(30) NULL      -- phone
@@ -87,7 +87,8 @@ CREATE TABLE MC_CONTACT (
 ALTER TABLE MC_CONTACT
 	ADD CONSTRAINT PK_MC_CONTACT -- CONTACT 기본키
 		PRIMARY KEY (
-			id -- id
+			user_id,      -- id
+			contact_type  -- contact_type
 		);
 
 -- GROUP_USER
@@ -114,7 +115,7 @@ ALTER TABLE MC_GROUP_USER
 ALTER TABLE MC_CONTACT
 	ADD CONSTRAINT FK_MC_USER_TO_MC_CONTACT -- USER -> CONTACT
 		FOREIGN KEY (
-			id -- id
+			user_id -- id
 		)
 		REFERENCES MC_USER ( -- USER
 			id -- id
