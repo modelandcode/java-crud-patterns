@@ -11,10 +11,10 @@ import java.sql.SQLException;
 public class GroupFactory {
     public static Group createBy(ResultSet rs) throws SQLException {
         if (rs == null) return null;
-        Group Group = new Group();
-        Group.setId(rs.getLong("id"));
-        Group.setName(rs.getString("name"));
+        Group group = new Group();
+        group.setId(rs.getLong("id"));
+        group.setName(rs.getString("name"));
 
-        return Group;
+        return group;
     }
 }

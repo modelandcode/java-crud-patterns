@@ -44,7 +44,7 @@ public class GroupRepository implements IGroupRepository {
     public Group 조회(long id) {
         StringBuilder sbSql =  new StringBuilder("SELECT * FROM MC_Group WHERE id=?");
         try {
-            return this.jdbcTemplate.queryForObject(	sbSql.toString(),
+            return this.jdbcTemplate.queryForObject( sbSql.toString(),
                     new Object[] { id }, (rs, rowNum) -> GroupFactory.createBy(rs) );
         } catch (EmptyResultDataAccessException e) {
             return null;
@@ -60,7 +60,7 @@ public class GroupRepository implements IGroupRepository {
 
         try {
             this.simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate)
-                    .withTableName("MC_Group")
+                    .withTableName("MC_GROUP")
                     .usingGeneratedKeyColumns("id");
 
             Number newId = simpleJdbcInsert.executeAndReturnKey(paramMap);
@@ -71,13 +71,13 @@ public class GroupRepository implements IGroupRepository {
     }
 
     @Override
-    public int 수정(Group Group) {
+    public int 수정(Group group) {
         StringBuilder sbSql =  new StringBuilder("UPDATE MC_Group ");
         sbSql.append("SET name=? ");
         sbSql.append("where id=?");
         try {
             return this.jdbcTemplate.update(sbSql.toString(),
-                    new Object[] { Group.getName(), Group.getId() });
+                    new Object[] { group.getName(), group.getId() });
         } catch (Exception e) {
             throw new RepositoryException(e, e.getMessage());
         }

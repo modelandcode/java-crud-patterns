@@ -10,7 +10,7 @@ import java.util.List;
 public interface IGroupService {
     List<Group> 목록조회();
     Group 조회(long id);
-    Group 추가(Group 그룹);
-    void 수정(Group 그룹);
+    Group 추가(Group group);
+    void 수정(Group group);
     void 삭제(long id);
 }
