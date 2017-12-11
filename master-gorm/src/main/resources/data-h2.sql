@@ -1,0 +1,1 @@
+INSERT INTO MC_USER(name,alias,email) VALUES ('김기상', 'gisang', 'gisangkim@gmail.com');
